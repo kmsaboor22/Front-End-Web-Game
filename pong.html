@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pong</title>
+	</head>
+	<body>
+		<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+		<script>
+		var canvas;
+		var canvasContext;
+
+			window.onload = function () {
+				console.log("hello World");
+				canvas = document.getElementById('gameCanvas');
+				canvasContext = canvas.getContext('2d');
+				canvasContext.fillStyle = 'black';
+				canvasContext.fillRect(0,0,canvas.width,canvas.height);
+			}
+		</script>
+	</body>
+</html>
