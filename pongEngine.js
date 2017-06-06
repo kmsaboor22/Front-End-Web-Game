@@ -19,28 +19,34 @@ var ballSpeedX = 10;
 	this is the ball physics method
 	*/
 	function moveEverything(){
-		ballX = ballX + ballSpeedX;
-		if(ballX < 0){
+			ballX = ballX + ballSpeedX;
+			if(ballX < 0){
 			ballSpeedX = -ballSpeedX;
-		}
-		if(ballX > canvas.width){
+			}
+			if(ballX > canvas.width){
 			ballSpeedX = -ballSpeedX;
 		}
 	}
-	//this will draw the canvas which is a black box, with a ball and as of now one side panal.
+
 	function drawEverything(){
-		canvasContext.fillStyle = 'black';
-		canvasContext.fillRect(0,0,canvas.width,canvas.height);
-		canvasContext.fillStyle = 'white';
-		canvasContext.fillRect(0,210,10,100);
-		canvasContext.fillStyle = 'red';
-		canvasContext.fillRect(ballX,100,10,10);
+			//draws a black screen for our game
+			colorRect(0,0,canvas.width,canvas.height,'black');
+			//left player paddle
+			colorRect(0,210,10,100,'white');
+			//Pong ball is drawn here
+			canvasContext.fillStyle = 'white';
+			canvasContext.beginPath();
+			canvasContext.arc(ballX, 100, 10, 0,Math.PI*2,true);
+			canvasContext.fill();
+			/* step 4/5
+			video 6/11
+			*/
 	}
 	/*
-
+template for
 	*/
 	function colorRect(leftX,topY,width,height,drawColor){
-		canvasContext.fillStyle = drawColor;
-		canvasContext.fillRect(leftX,topY,width,height);
+			canvasContext.fillStyle = drawColor;
+			canvasContext.fillRect(leftX,topY,width,height);
 
 	}
