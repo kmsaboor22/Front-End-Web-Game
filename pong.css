@@ -9,6 +9,12 @@
 		padding-bottom: 5%;
 }
 
+body{
+	background-image: url(pink-clouds.jpg);
+  background-size: cover;
+  height: auto;
+}
+
 h1{
 	text-align: center;
 }
